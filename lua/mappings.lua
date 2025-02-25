@@ -7,15 +7,9 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- buffers
+-- -- buffers
 
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-map("n", "<leader>bd", function()
-  Snacks.bufdelete()
-end, { desc = "Delete Buffer" })
-map("n", "<leader>bo", function()
-  Snacks.bufdelete.other()
-end, { desc = "Delete Other Buffers" })
 
 -- copilot
 
@@ -28,3 +22,10 @@ end
 
 map({ "n", "v" }, "<leader>cq", openCopilot, { desc = "CopilotChat - Quick chat", remap = true })
 map({ "n", "v" }, "<leader>cQ", ":CopilotChat", { desc = "CopilotChat - Open chat", remap = true })
+
+-- tmux navigator
+
+map({ "n" }, "<c-h>", ":TmuxNavigateLeft<cr>", { remap = true })
+map({ "n" }, "<c-j>", ":TmuxNavigateDown<cr>", { remap = true })
+map({ "n" }, "<c-k>", ":TmuxNavigateUp<cr>", { remap = true })
+map({ "n" }, "<c-l>", ":TmuxNavigateRight<cr>", { remap = true })
